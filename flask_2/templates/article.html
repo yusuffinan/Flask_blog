@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+{% if articles %}
+<form action="/search" method = "POST">
+  <input type="text" name ="keyword" class="input-sm" maxlength="64" placeholder="Search..." />
+  <button type="submit" class="btn btn-primary">Search</button>
+  <hr>
+
+</form>  
+
+
+<ul class="list-group">
+    {% for article in articles %}
+    <li class="list-group-item"><a href="/article/{{article.id}}">{{article.title}}</a>  </li>
+    
+    {% endfor %}
+  </ul>
+{% else %}
+<div class = "alert aler-danger"> MAKALE BULUNMUYOR</div>
+{% endif %}
+<ul>
+    {% for artcs in artc %}
+    <li>id: {{artcs.id}}- title: {{artcs.title}}- Content: {{artcs.content}}</li>
+    {% endfor %}
+</ul>
+{% endblock  %}

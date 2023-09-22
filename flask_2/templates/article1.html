@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+{% if article %}
+
+  
+<h4>{{article.title}}</h4>
+<hr>
+<p>Ekleyen: {{article.author}}</p><hr>
+<p>Tarih: {{article.created_date}}</p><hr>
+
+<p>{{article.content}}</p>
+{% else %}
+<div class =" alert alert-warning">Bilgi yok</div>
+{% endif %}
+{% endblock body %}

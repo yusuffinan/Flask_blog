@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+{% from "formhelper.html" import render_field %}
+<p>Giriş ekranı</p>
+<hr>
+
+<form method="post">
+    {{ render_field(form.username) }}
+    {{ render_field(form.parola) }}
+    <button type="submit" class="btn btn-primary">Giris</button>
+</form>
+{% endblock body %}
