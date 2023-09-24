@@ -83,7 +83,7 @@ def article():
 def detail(id):
     cursor = mysql.connection.cursor()
     sorgu = "select * from articles where id = %s"
-    result = cursor.execute(sorgu,(id))
+    result = cursor.execute(sorgu,(id,))
     if result >0:
         article = cursor.fetchone()
         return render_template("article1.html", article= article)
